@@ -2,9 +2,12 @@ A single kickdrum
 A kickdrum
 A distored kickdrum
 A kickdrum with a lot of reverb
+Deep house kick
+Techno kick
 A clap
 A weird clap
 A snare
+A snare with reverb tail
 A string orchestra
 A analog synth
 A distorted analog synth
@@ -13,3 +16,120 @@ dreamy nostalgic strings
 Ambient pads
 A guitar string
 A distorted guitar string
+A tight snare
+808 bass
+A sub-bass
+Jazz ride cymbal
+A realistic hi-hat pattern
+A blues harmonica
+A smooth saxophone
+A jazz trumpet solo
+Electric piano chords
+Grand piano arpeggios
+Harpsichord playing Baroque
+A sitar drone
+A tabla rhythm
+Fast-paced conga drums
+A marimba melody
+An upright bass groove
+Lo-fi beats
+A vocoder voice
+A children's choir
+An operatic soprano
+A flute ensemble
+An oboe solo
+Bassoon in a chamber setting
+Steel drums playing Calypso
+A bagpipe melody
+A didgeridoo drone
+Djembe in a world music context
+A triangle ting
+Cowbell in a funk setting
+A gong hit
+Wind chimes in C major
+A celesta playing a lullaby
+A Hammond organ in gospel style
+A Moog synthesizer lead
+Square wave arpeggiator
+FM synthesis bells
+Noise sweep
+White noise with a filter sweep
+Vinyl crackle
+Tape hiss
+Reverse cymbal
+Side-chained pad
+Glitched vocal sample
+Auto-tuned vocals
+A theremin playing a melody
+Beatboxing sequence
+Finger snaps in a jazz setting
+A full orchestral crescendo
+A muted trumpet
+A slide guitar in a blues context
+Clawhammer banjo
+Double-bass pizzicato
+A haunting choir pad
+Ambient rainforest sounds
+Foley footsteps
+Synth brass in an '80s style
+Harp glissando
+Ticking clock sample
+Ambient ocean waves
+Jazz brush kit groove
+A detuned square wave synth
+An aggressive dubstep wobble bass
+Shrill piccolo solo
+Melodic pan flute
+Sustained pipe organ chord
+Choir singing in Latin
+A fingerstyle ukulele
+Flamenco guitar playing fast runs
+Hard rock power chords
+Acoustic guitar with a capo on 5th fret
+A sultry bossa nova rhythm
+Swing band with a prominent double bass
+Spooky theremin melody
+A pulsing trance bassline
+Crunchy breakbeat loop
+Reggae offbeat chords
+A barbershop quartet
+Bowed double bass drone
+Glissando on a grand harp
+Layered vocal harmonies
+A slow, haunting Gregorian chant
+A distorted metal guitar solo
+A mellow Rhodes piano groove
+A detuned radio frequency scan
+Spacey sci-fi effects
+A mandolin playing bluegrass
+Chorus of kazoos playing a melody
+Melodica in a reggae context
+Pop punk palm-muted guitar
+Bright and shimmering glockenspiel
+High-pitched bat squeaks
+Traditional Japanese koto melody
+Tribal African drum circle
+A drone from a tanpura
+Cajun accordion riff
+Complex polyrhythmic hand percussion
+A twangy banjo in a bluegrass setting
+Psychedelic sitar in a raga style
+A punchy techno kick
+Rich choir aahs and ooohs
+Massive cinematic drum hits
+A fluid slap bass line
+Balkan brass band upbeat tune
+Tense suspense string section
+Shruti box drone in C#
+Chirping birds at dawn
+Tuvan throat singing melody
+A haunting reverb-drenched ebow guitar
+Energetic punk rock drum fill
+Middle Eastern oud improvisation
+Polka accordion and tuba duet
+Smooth and soulful Motown bassline
+An eerie wind howling effect
+Traditional Chinese guzheng melody
+A slapstick comedy woodblock
+Bouncy reggaeton beat with dembow rhythm
+Echoing canyon yodel

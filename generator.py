@@ -40,13 +40,8 @@ for repo_id in LDM2_repo_ids:
 
 generator = torch.Generator(device).manual_seed(seed)
 
-# Load prompts from prompts.txt separated by newlines
 with open("prompts.txt", "r") as f:
     prompts = f.read().splitlines()
-
-# log prompts
-for prompt in prompts:
-    print(prompt)
 
 # delete folders in /results
 shutil.rmtree("results")
