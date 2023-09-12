@@ -9,7 +9,7 @@ import os
 
 # Constants
 SR = 16000
-DEVICE = "mps"
+DEVICE = "cpu"
 AUDIO_LENGTH_IN_S = 5
 NUM_INFERENCE_STEPS = 10
 GUIDANCE_SCALE = 2.5
@@ -18,11 +18,13 @@ NEGATIVE_PROMPT = "low quality, average quality, noise, high pitch, artefacts"
 RESULTS_DIR = "results"
 
 LDM_REPO_IDS = [
+    "cvssp/audioldm-s-full-v2",
     "cvssp/audioldm-m-full",
     "cvssp/audioldm-l-full"
 ]
 
 LDM2_REPO_IDS = [
+    "cvssp/audioldm2",
     "cvssp/audioldm2-large",
     "cvssp/audioldm2-music"
 ]
@@ -33,7 +35,7 @@ def initialize_pipeline(repo_ids, pipeline_type):
     for repo_id in repo_ids:
         pipe = pipeline_type.from_pretrained(repo_id, torch_dtype=torch.float32)
         pipe = pipe.to(DEVICE)
-        pipe.enable_attention_slicing()
+        #pipe.enable_attention_slicing()
         pipe.name = repo_id.split('/')[-1]
         pipelines.append(pipe)
     return pipelines

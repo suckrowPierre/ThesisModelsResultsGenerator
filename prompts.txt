@@ -46,7 +46,6 @@ Djembe in a world music context
 A triangle ting
 Cowbell in a funk setting
 A gong hit
-Wind chimes in C major
 A celesta playing a lullaby
 A Hammond organ in gospel style
 A Moog synthesizer lead
@@ -120,7 +119,6 @@ Massive cinematic drum hits
 A fluid slap bass line
 Balkan brass band upbeat tune
 Tense suspense string section
-Shruti box drone in C#
 Chirping birds at dawn
 Tuvan throat singing melody
 A haunting reverb-drenched ebow guitar
@@ -133,3 +131,30 @@ Traditional Chinese guzheng melody
 A slapstick comedy woodblock
 Bouncy reggaeton beat with dembow rhythm
 Echoing canyon yodel
+Drums with echo
+Guitar with a phaser effect
+A Synth with a delay effect
+An electronic piano
+A 808 kickdrum
+A 606 kickdrum
+A 909 kickdrum
+A solina sounding string synthesizer
+A TB-303 sound synthesizer
+A Minimoog bass
+A mellotron
+A Juno-106 pad
+Oberheimer OB-Xa string pads
+Dub-Reggea drums
+An angelic choir
+nostalgic pads
+horror sound effects
+A laser gun
+DJ-scratching
+romantic violins
+A chime set
+A magic flute
+A hip hop beat
+A jungle drum break
+Amen break
+hi-hat triplets
+A jumpscare sound
