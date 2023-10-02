@@ -1,0 +1,6 @@
+seed: 8094681003267709068
+devices: ['mps']
+models: ['cvssp/audioldm-m-full', 'cvssp/audioldm2']
+prompts: ['Chirping birds at dawn', 'A choir pad', 'An ambient electronic pad']
+params: {'guidance_scale': 3, 'num_inference_steps': 50, 'negative_prompt': 'low quality, average quality, noise, high pitch, artefacts', 'num_waveforms_per_prompt': 1}
+parameter_variation: ('audio_length_in_s', [5, 10, 20, 30])

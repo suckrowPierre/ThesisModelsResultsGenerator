@@ -106,6 +106,7 @@ def generate_evaluation(
     if delete_old_files_flag and path.exists():
         logging.info(f"Deleting old files in {path}")
         shutil.rmtree(path)
+    write_params_to_file(path, devices, models, prompts, params, seed, parameter_variation)
     for device in devices:
         logging.info(f"Generating audios for device: {device}")
         for model in models:
@@ -116,11 +117,30 @@ def generate_evaluation(
             clean_pipeline(pipe, device)
 
 
+def write_params_to_file(
+        path: Path,
+        devices: List[str],
+        models: List[Any],
+        prompts: List[str],
+        params: Dict[str, Any],
+        seed: int,
+        parameter_variation: Optional[Tuple[str, Any]] = None
+):
+    path.mkdir(parents=True, exist_ok=True)
+    with open(path / "parameters.txt", "w") as f:
+        f.write(f"seed: {seed}\n")
+        f.write(f"devices: {devices}\n")
+        f.write(f"models: {models}\n")
+        f.write(f"prompts: {prompts}\n")
+        f.write(f"params: {params}\n")
+        f.write(f"parameter_variation: {parameter_variation}\n")
+
 def device_evaluation():
     path = Path(RESULTS_DIR + "/device_evaluation")
     devices = ["mps", "cpu"]
-    models = ["cvssp/audioldm-m-full", "cvssp/audioldm2-music"]
-    prompts = ["A blues harmonica", "Ambient ocean waves"]
+    models = LDM_REPO_IDS + LDM2_REPO_IDS
+
+    prompts = ["A string orchestra", "Ambient ocean waves", "A hip hop beat", "Smooth synth lead", "Warm organ chord", "Bright bell sound"]
     seed = 2304559601318669088
     params = {
         "audio_length_in_s": 5,
@@ -135,8 +155,8 @@ def device_evaluation():
 def duration_evaluation():
     path = Path(RESULTS_DIR + "/duration_evaluation")
     devices = ["mps"]
-    models = ["cvssp/audioldm-m-full", "cvssp/audioldm2-music"]
-    prompts = ["A flute ensemble", "A choir pad", "An ambient electronic pad"]
+    models = ["cvssp/audioldm-m-full", "cvssp/audioldm2"]
+    prompts = ["Chirping birds at dawn", "A choir pad", "An ambient electronic pad"]
     seed = 8094681003267709068
     params = {
         "guidance_scale": 3,
@@ -151,10 +171,105 @@ def duration_evaluation():
     generate_evaluation(path, devices, models, prompts, params, seed, parameter_variation)
 
 
+def guidance_scale_evaluation():
+    path = Path(RESULTS_DIR + "/guidance_scale_evaluation")
+    devices = ["mps"]
+    models = LDM_REPO_IDS + LDM2_REPO_IDS
+    prompts = ["Gentle guitar strum", "Tribal African drum circle", "vocal harmonies"]
+    seed = 7484926261153206834
+    params = {
+        "audio_length_in_s": 5,
+        "num_inference_steps": 50,
+        "negative_prompt": "low quality, average quality, noise, high pitch, artefacts",
+        "num_waveforms_per_prompt": 1,
+    }
+    parameter_variation = (
+        "guidance_scale", [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]
+    )
+
+    generate_evaluation(path, devices, models, prompts, params, seed, parameter_variation)
+
+
+def num_inference_steps_evaluation():
+    path = Path(RESULTS_DIR + "/num_inference_steps_evaluation")
+    devices = ["mps"]
+    models = LDM_REPO_IDS + LDM2_REPO_IDS
+    prompts = ["ambient texture", "techno kickdrum", "Long evolving drone"]
+    seed = 12705433011279635488
+    params = {
+        "audio_length_in_s": 5,
+        "guidance_scale": 3,
+        "negative_prompt": "low quality, average quality, noise, high pitch, artefacts",
+        "num_waveforms_per_prompt": 1,
+    }
+    parameter_variation = (
+        "num_inference_steps", [5, 10, 20, 50, 100, 200, 400]
+    )
+    generate_evaluation(path, devices, models, prompts, params, seed, parameter_variation)
+
+def negative_prompt_evaluation():
+    path = Path(RESULTS_DIR + "/negative_prompt_evaluation")
+    devices = ["mps"]
+    models = ["cvssp/audioldm-m-full", "cvssp/audioldm2-music"]
+    prompts = ["Soft flute note", "Choir", "A muted trumpet"]
+    seed = 15159449351027230159
+    params = {
+        "audio_length_in_s": 5,
+        "guidance_scale": 3,
+        "num_inference_steps": 50,
+        "num_waveforms_per_prompt": 1,
+    }
+    parameter_variation = ( "negative_prompt",
+    ["low quality", "average quality", "harsh noise", "dissonant chords", "distorted sounds", "clashing frequencies", "feedback loop", "clattering", "inharmonious", "average quality", "noise", "high pitch", "artefacts"])
+
+    generate_evaluation(path, devices, models, prompts, params, seed, parameter_variation)
+
+def prompts_evaluation():
+
+    devices = ["mps"]
+    models = ["cvssp/audioldm-l-full", "cvssp/audioldm2", "cvssp/audioldm2-music"]
+    seed = 12057337057645377627
+    params = {
+        "audio_length_in_s": 5,
+        "guidance_scale": 3,
+        "num_inference_steps": 50,
+        "negative_prompt": "low quality, average quality, noise, high pitch, artefacts",
+        "num_waveforms_per_prompt": 1,
+    }
+
+    # Single Events Prompts
+    path = Path(RESULTS_DIR + "/prompts_evaluation/single_events_prompts")
+    prompts = ["A kickdrum", "A snare", "A single Light triangle ting", "Loud clap sound", "A gong hit"]
+
+    # Instrument Specific Prompts
+    path = Path(RESULTS_DIR + "/prompts_evaluation/instrument_specific_prompts")
+    prompts = ["FM synthesis bells", "mellotron chords", "A bagpipe melody", "A guitar string", "A piano chord"]
+    generate_evaluation(path, devices, models, prompts, params, seed)
+
+    # Emotion Specific Prompts
+    path = Path(RESULTS_DIR + "/prompts_evaluation/emotion_specific_prompts")
+    prompts = ["Dark pad sound", "An ethereal, shimmering synth pad", "An angelic choir", "dreamy nostalgic strings", "a sad violin solo"]
+    generate_evaluation(path, devices, models, prompts, params, seed)
+
+    # Effect Specific Prompts
+    path = Path(RESULTS_DIR + "/prompts_evaluation/effect_specific_prompts")
+    prompts = ["Long sustain snare hit", "A fluttering harp with crystal echoes", "A Synth with a delay effect", "echoing synth stabs", "A distorted synth",
+               "A detuned synth", "Reverse cymbal", "A kickdrum with a lot of reverb"]
+    generate_evaluation(path, devices, models, prompts, params, seed)
+
+    # Music Production Specific Prompts
+    path = Path(RESULTS_DIR + "/prompts_evaluation/music_production_specific_prompts")
+    prompts = ["an 808 kickdrum", "the amen break", "a 909 snare", "a 303 baseline", "A jungle drum break", "A Juno-106 pad", "Oberheimer OB-Xa string pads"]
+    generate_evaluation(path, devices, models, prompts, params, seed)
+
+
+
 def main():
     device_evaluation()
-    # duration_evaluation()
-
+    duration_evaluation()
+    guidance_scale_evaluation()
+    num_inference_steps_evaluation()
+    negative_prompt_evaluation()
 
 if __name__ == '__main__':
     main()

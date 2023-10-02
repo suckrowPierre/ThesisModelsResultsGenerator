@@ -1,0 +1,6 @@
+seed: 2304559601318669088
+devices: ['mps', 'cpu']
+models: ['cvssp/audioldm-s-full-v2', 'cvssp/audioldm-m-full', 'cvssp/audioldm-l-full', 'cvssp/audioldm2', 'cvssp/audioldm2-large', 'cvssp/audioldm2-music']
+prompts: ['A string orchestra', 'Ambient ocean waves', 'A hip hop beat', 'Smooth synth lead', 'Warm organ chord', 'Bright bell sound']
+params: {'audio_length_in_s': 5, 'guidance_scale': 3, 'num_inference_steps': 50, 'negative_prompt': 'low quality, average quality, noise, high pitch, artefacts', 'num_waveforms_per_prompt': 1}
+parameter_variation: None

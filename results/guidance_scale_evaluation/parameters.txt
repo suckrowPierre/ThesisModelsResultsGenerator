@@ -1,0 +1,6 @@
+seed: 7484926261153206834
+devices: ['mps']
+models: ['cvssp/audioldm-s-full-v2', 'cvssp/audioldm-m-full', 'cvssp/audioldm-l-full', 'cvssp/audioldm2', 'cvssp/audioldm2-large', 'cvssp/audioldm2-music']
+prompts: ['Gentle guitar strum', 'Tribal African drum circle', 'vocal harmonies']
+params: {'audio_length_in_s': 5, 'num_inference_steps': 50, 'negative_prompt': 'low quality, average quality, noise, high pitch, artefacts', 'num_waveforms_per_prompt': 1}
+parameter_variation: ('guidance_scale', [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5])

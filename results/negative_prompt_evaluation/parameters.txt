@@ -1,0 +1,6 @@
+seed: 15159449351027230159
+devices: ['mps']
+models: ['cvssp/audioldm-m-full', 'cvssp/audioldm2-music']
+prompts: ['Soft flute note', 'Choir', 'A muted trumpet']
+params: {'audio_length_in_s': 5, 'guidance_scale': 3, 'num_inference_steps': 50, 'num_waveforms_per_prompt': 1}
+parameter_variation: ('negative_prompt', ['low quality', 'average quality', 'harsh noise', 'dissonant chords', 'distorted sounds', 'clashing frequencies', 'feedback loop', 'clattering', 'inharmonious', 'average quality', 'noise', 'high pitch', 'artefacts'])
