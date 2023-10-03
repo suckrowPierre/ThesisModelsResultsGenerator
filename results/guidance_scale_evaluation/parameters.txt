@@ -6,4 +6,4 @@ audio_length_in_s: 5
 num_inference_steps: 50
 negative_prompt: low quality, average quality, noise, high pitch, artefacts
 num_waveforms_per_prompt: 1
-guidance_scale: [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]
+guidance_scale: [1, 2, 3, 4, 5]

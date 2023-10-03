@@ -187,7 +187,7 @@ def guidance_scale_evaluation():
         "num_waveforms_per_prompt": 1,
     }
     parameter_variation = (
-        "guidance_scale", [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]
+        "guidance_scale", [1, 2, 3, 4, 5]
     )
 
     generate_evaluation(path, devices, models, prompts, params, seed, parameter_variation)
