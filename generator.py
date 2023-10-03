@@ -132,9 +132,11 @@ def write_params_to_file(
         f.write(f"devices: {devices}\n")
         f.write(f"models: {models}\n")
         f.write(f"prompts: {prompts}\n")
-        f.write(f"params: {params}\n")
-        f.write(f"parameter_variation: {parameter_variation}\n")
-
+        for key, value in params.items():
+            f.write(f"{key}: {value}\n")
+        if parameter_variation:
+            key, value = parameter_variation
+            f.write(f"{key}: {value}\n")
 def device_evaluation():
     path = Path(RESULTS_DIR + "/device_evaluation")
     devices = ["mps", "cpu"]
