@@ -1,6 +1,6 @@
 seed: 12705433011279635488
 devices: ['mps']
-models: ['cvssp/audioldm-s-full-v2', 'cvssp/audioldm-m-full', 'cvssp/audioldm-l-full', 'cvssp/audioldm2', 'cvssp/audioldm2-large', 'cvssp/audioldm2-music']
+models: ['audioldm-s-full-v2', 'audioldm-m-full', 'audioldm-l-full', 'audioldm2', 'audioldm2-large', 'audioldm2-music']
 prompts: ['ambient texture', 'techno kickdrum', 'Long evolving drone']
 audio_length_in_s: 5
 guidance_scale: 3

@@ -1,6 +1,6 @@
 seed: 8094681003267709068
 devices: ['mps']
-models: ['cvssp/audioldm-m-full', 'cvssp/audioldm2']
+models: ['audioldm-m-full', 'audioldm2']
 prompts: ['Chirping birds at dawn', 'A choir pad', 'An ambient electronic pad']
 guidance_scale: 3
 num_inference_steps: 50

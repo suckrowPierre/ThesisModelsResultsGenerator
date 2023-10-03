@@ -130,6 +130,7 @@ def write_params_to_file(
     with open(path / "parameters.txt", "w") as f:
         f.write(f"seed: {seed}\n")
         f.write(f"devices: {devices}\n")
+        models = [model.split('/')[1] for model in models]
         f.write(f"models: {models}\n")
         f.write(f"prompts: {prompts}\n")
         for key, value in params.items():
