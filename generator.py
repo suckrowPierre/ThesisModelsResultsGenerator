@@ -132,7 +132,8 @@ def write_params_to_file(
         f.write(f"devices: {devices}\n")
         models = [model.split('/')[1] for model in models]
         f.write(f"models: {models}\n")
-        f.write(f"prompts: {prompts}\n")
+        if prompts:
+            f.write(f"prompts: {prompts}\n")
         for key, value in params.items():
             f.write(f"{key}: {value}\n")
         if parameter_variation:
@@ -239,6 +240,7 @@ def prompts_evaluation():
         "negative_prompt": "low quality, average quality, noise, harsh noise",
         "num_waveforms_per_prompt": 1,
     }
+    write_params_to_file(Path(RESULTS_DIR + "/prompts_evaluation"), devices, models, [], params, seed)
 
     # Single Events Prompts
     path = Path(RESULTS_DIR + "/prompts_evaluation/single_events_prompts")
@@ -265,7 +267,6 @@ def prompts_evaluation():
     path = Path(RESULTS_DIR + "/prompts_evaluation/music_production_specific_prompts")
     prompts = ["an 808 kickdrum", "the amen break", "a 909 snare", "a 303 baseline", "A jungle drum break", "A Juno-106 pad", "Oberheimer OB-Xa string pads"]
     generate_evaluation(path, devices, models, prompts, params, seed)
-
 
 
 def main():
