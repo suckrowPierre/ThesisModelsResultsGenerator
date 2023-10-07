@@ -1,0 +1,11 @@
+seed: 12057337057645377627
+devices: ['mps']
+models: ['audioldm-m-full', 'audioldm-l-full', 'audioldm2', 'audioldm2-music']
+prompts: ['Dark pad sound', 'An ethereal, shimmering synth pad', 'An angelic choir', 'dreamy nostalgic strings', 'a sad violin solo']
+audio_length_in_s: 5
+guidance_scale: 3
+num_inference_steps: 100
+negative_prompt: low quality, average quality, noise, harsh noise
+num_waveforms_per_prompt: 1
+prompt: A piano chord
+generator: <torch._C.Generator object at 0x2d33cbb50>

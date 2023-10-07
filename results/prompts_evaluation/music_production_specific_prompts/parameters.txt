@@ -1,0 +1,11 @@
+seed: 12057337057645377627
+devices: ['mps']
+models: ['audioldm-m-full', 'audioldm-l-full', 'audioldm2', 'audioldm2-music']
+prompts: ['an 808 kickdrum', 'the amen break', 'a 909 snare', 'a 303 baseline', 'A jungle drum break', 'A Juno-106 pad', 'Oberheimer OB-Xa string pads']
+audio_length_in_s: 5
+guidance_scale: 3
+num_inference_steps: 100
+negative_prompt: low quality, average quality, noise, harsh noise
+num_waveforms_per_prompt: 1
+prompt: A kickdrum with a lot of reverb
+generator: <torch._C.Generator object at 0x29de8feb0>

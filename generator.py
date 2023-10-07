@@ -230,19 +230,20 @@ def negative_prompt_evaluation():
 def prompts_evaluation():
 
     devices = ["mps"]
-    models = ["cvssp/audioldm-l-full", "cvssp/audioldm2", "cvssp/audioldm2-music"]
+    models = ["cvssp/audioldm-m-full", "cvssp/audioldm-l-full", "cvssp/audioldm2", "cvssp/audioldm2-music"]
     seed = 12057337057645377627
     params = {
         "audio_length_in_s": 5,
         "guidance_scale": 3,
-        "num_inference_steps": 50,
-        "negative_prompt": "low quality, average quality, noise, high pitch, artefacts",
+        "num_inference_steps": 100,
+        "negative_prompt": "low quality, average quality, noise, harsh noise",
         "num_waveforms_per_prompt": 1,
     }
 
     # Single Events Prompts
     path = Path(RESULTS_DIR + "/prompts_evaluation/single_events_prompts")
     prompts = ["A kickdrum", "A snare", "A single Light triangle ting", "Loud clap sound", "A gong hit"]
+    generate_evaluation(path, devices, models, prompts, params, seed)
 
     # Instrument Specific Prompts
     path = Path(RESULTS_DIR + "/prompts_evaluation/instrument_specific_prompts")
@@ -268,11 +269,7 @@ def prompts_evaluation():
 
 
 def main():
-    device_evaluation()
-    duration_evaluation()
-    guidance_scale_evaluation()
-    num_inference_steps_evaluation()
-    negative_prompt_evaluation()
+    prompts_evaluation()
 
 if __name__ == '__main__':
     main()
