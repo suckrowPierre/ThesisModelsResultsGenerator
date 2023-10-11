@@ -1,5 +1,5 @@
 seed: 2304559601318669088
-devices: ['mps', 'cpu']
+devices: ['cuda', 'mps', 'cpu']
 models: ['audioldm-s-full-v2', 'audioldm-m-full', 'audioldm-l-full', 'audioldm2', 'audioldm2-large', 'audioldm2-music']
 prompts: ['A string orchestra', 'Ambient ocean waves', 'A hip hop beat', 'Smooth synth lead', 'Warm organ chord', 'Bright bell sound']
 audio_length_in_s: 5

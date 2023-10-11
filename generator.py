@@ -254,7 +254,7 @@ def prompts_evaluation():
 
     # Emotion Specific Prompts
     path = Path(RESULTS_DIR + "/prompts_evaluation/emotion_specific_prompts")
-    prompts = ["Dark pad sound", "An ethereal, shimmering synth pad", "An angelic choir", "dreamy nostalgic strings", "a sad violin solo"]
+    prompts = ["Dark pad sound", "An ethereal shimmering synth pad", "An angelic choir", "dreamy nostalgic strings", "a sad violin solo"]
     generate_evaluation(path, devices, models, prompts, params, seed)
 
     # Effect Specific Prompts
