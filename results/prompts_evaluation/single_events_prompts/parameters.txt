@@ -1,7 +1,7 @@
 seed: 12057337057645377627
 devices: ['mps']
 models: ['audioldm-m-full', 'audioldm-l-full', 'audioldm2', 'audioldm2-music']
-prompts: ['A kickdrum', 'A snare', 'A single Light triangle ting', 'Loud clap sound', 'A gong hit']
+prompts: ['A kickdrum', 'A single kickdrum', 'A snare', 'A single snare', 'A single Light triangle ting', 'Loud clap sound', 'A gong hit']
 audio_length_in_s: 5
 guidance_scale: 3
 num_inference_steps: 100

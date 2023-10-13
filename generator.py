@@ -141,10 +141,11 @@ def write_params_to_file(
             f.write(f"{key}: {value}\n")
 def device_evaluation():
     path = Path(RESULTS_DIR + "/device_evaluation")
-    devices = ["mps", "cpu"]
+    devices = ["cuda", "mps", "cpu"]
     models = LDM_REPO_IDS + LDM2_REPO_IDS
 
-    prompts = ["A string orchestra", "Ambient ocean waves", "A hip hop beat", "Smooth synth lead", "Warm organ chord", "Bright bell sound"]
+    prompts = ["A string orchestra", "Ambient ocean waves", "A hip hop beat", "Smooth synth lead", "Warm organ chord",
+               "Bright bell sound"]
     seed = 2304559601318669088
     params = {
         "audio_length_in_s": 5,
@@ -224,7 +225,8 @@ def negative_prompt_evaluation():
         "num_waveforms_per_prompt": 1,
     }
     parameter_variation = ( "negative_prompt",
-    ["low quality", "average quality", "harsh noise", "dissonant chords", "distorted sounds", "clashing frequencies", "feedback loop", "clattering", "inharmonious", "average quality", "noise", "high pitch", "artefacts"])
+    ["low quality", "average quality", "harsh noise", "dissonant chords", "distorted sounds", "clashing frequencies",
+     "feedback loop", "clattering", "inharmonious", "average quality", "noise", "high pitch", "artefacts"])
 
     generate_evaluation(path, devices, models, prompts, params, seed, parameter_variation)
 
@@ -244,9 +246,10 @@ def prompts_evaluation():
 
     # Single Events Prompts
     path = Path(RESULTS_DIR + "/prompts_evaluation/single_events_prompts")
-    prompts = ["A kickdrum", "A snare", "A single Light triangle ting", "Loud clap sound", "A gong hit"]
+    prompts = ["A kickdrum", "A single kickdrum", "A snare", "A single snare", "A single Light triangle ting", "Loud clap sound", "A gong hit"]
     generate_evaluation(path, devices, models, prompts, params, seed)
 
+    '''
     # Instrument Specific Prompts
     path = Path(RESULTS_DIR + "/prompts_evaluation/instrument_specific_prompts")
     prompts = ["FM synthesis bells", "mellotron chords", "A bagpipe melody", "A guitar string", "A piano chord"]
@@ -254,21 +257,24 @@ def prompts_evaluation():
 
     # Emotion Specific Prompts
     path = Path(RESULTS_DIR + "/prompts_evaluation/emotion_specific_prompts")
-    prompts = ["Dark pad sound", "An ethereal shimmering synth pad", "An angelic choir", "dreamy nostalgic strings", "a sad violin solo"]
+    prompts = ["Dark pad sound", "An ethereal shimmering synth pad", "An angelic choir", "dreamy nostalgic strings",
+               "a sad violin solo"]
     generate_evaluation(path, devices, models, prompts, params, seed)
 
     # Effect Specific Prompts
     path = Path(RESULTS_DIR + "/prompts_evaluation/effect_specific_prompts")
-    prompts = ["Long sustain snare hit", "A fluttering harp with crystal echoes", "A Synth with a delay effect", "echoing synth stabs", "A distorted synth",
+    prompts = ["Long sustain snare hit", "A fluttering harp with crystal echoes", "A Synth with a delay effect",
+               "echoing synth stabs", "A distorted synth",
                "A detuned synth", "Reverse cymbal", "A kickdrum with a lot of reverb"]
     generate_evaluation(path, devices, models, prompts, params, seed)
 
     # Music Production Specific Prompts
     path = Path(RESULTS_DIR + "/prompts_evaluation/music_production_specific_prompts")
-    prompts = ["an 808 kickdrum", "the amen break", "a 909 snare", "a 303 baseline", "A jungle drum break", "A Juno-106 pad", "Oberheimer OB-Xa string pads"]
+    prompts = ["an 808 kickdrum", "the amen break", "a 909 snare", "a 303 baseline", "A jungle drum break",
+               "A Juno-106 pad", "Oberheimer OB-Xa string pads"]
     generate_evaluation(path, devices, models, prompts, params, seed)
 
-
+    '''
 def main():
     prompts_evaluation()
 
